@@ -30,6 +30,9 @@ int main(){
                             int p = arr[i-j];
                             int n = arr[i+k];
                             arr[i] = floor((p+n)/2);
+                            if((p+n)<0){
+                                arr[i] = floor((p+n))/2;
+                            }
                             if(p > 100){
                                 arr[i] = n;
                             }

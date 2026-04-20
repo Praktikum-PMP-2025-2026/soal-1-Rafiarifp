@@ -23,9 +23,9 @@ int main(){
     for (int i = 0; i < n; i++){
         int truth = 1;
         if (arr[i] == -1){
-            for(int j = 1; j < n; j++){
+            for(int j = 1; j < n-i; j++){
                 if (arr[i-j] != -1 && truth == 1){
-                    for (int k = 1; k < n; k++){
+                    for (int k = 1; k < n-i; k++){
                         if (arr[i+k] != -1 && truth == 1){
                             int p = arr[i-j];
                             int n = arr[i+k];
@@ -42,6 +42,14 @@ int main(){
     for (int i = 0; i < n; i++){
         sum += arr[i];
     }
+
+    if (sum == -1*n){
+        sum = 0;
+        for (int i = 0; i < n; i++){
+            arr[i] = 0;
+        }
+    }
+
     printf("RECOVERED");
     for (int i = 0; i < n; i++){
         printf(" %d", arr[i]);

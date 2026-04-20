@@ -31,7 +31,7 @@ int main(){
                             int n = arr[i+k];
                             arr[i] = floor((p+n)/2);
                             if((p+n)<0){
-                                arr[i] = floor((p+n))/2;
+                                arr[i] = arr[i] - 1;
                             }
                             if(p > 100){
                                 arr[i] = n;

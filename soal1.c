@@ -32,16 +32,6 @@ int main(){
                             arr[i] = floor((p+n)/2);
                             truth = 0;
                         }
-                        if(truth == 1){
-                            arr[i] = arr[i-j];
-                        }
-                    }
-                }
-                if(truth == 1){
-                    for (int k = 1; k < n-i; k++){
-                        if (arr[i+k] != -1 && truth == 1){
-                            arr[i] = arr[i+k];
-                        }
                     }
                 }
             }

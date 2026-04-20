@@ -23,12 +23,13 @@ int main(){
     for (int i = 0; i < n; i++){
         int truth = 1;
         if (arr[i] == -1){
-            for(int j = 1; j < n; j++){
-                if (arr[i-j] != -1 && truth == 1){
-                    for (int k = 1; k < n; k++){
-                        if (arr[i+k] != -1 && truth == 1){
+            for(int j = 1; j < n-i; j++){
+                if ((arr[i-j] != -1 || arr[i-j] == 0) && truth == 1){
+                    for (int k = 1; k < n-i; k++){
+                        if ((arr[i+k] != -1 || arr[i+k] == 0) && truth == 1){
                             int p = arr[i-j];
                             int n = arr[i+k];
+                            printf("pn %d %d", p, n);
                             arr[i] = floor((p+n)/2);
                             truth = 0;
                         }
